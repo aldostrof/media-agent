@@ -65,7 +65,7 @@ setup(
     # triggers what is defined in main method of cli.py file.
     entry_points = {
         'console_scripts': [
-            'mediabot=core.cli:main',
+            'mediabot=core.main:main',
         ],
     },
     # needed for execution of tests.
