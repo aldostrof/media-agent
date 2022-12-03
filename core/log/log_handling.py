@@ -55,21 +55,21 @@ class LogManager():
 
     def log_info(self, msg, log_exc=False, log_stack=False, stack_lvl=1):
         if self.__initialized:
-            logging.info(msg, exc_info=log_exc, stack_info=log_stack, stack_level=stack_lvl)
+            logging.info(msg, exc_info=log_exc, stack_info=log_stack, stacklevel=stack_lvl)
         else:
             pass
             # TODO: raise exception if logging subsystem is not initialized
 
     def log_warn(self, msg, log_exc=False, log_stack=False, stack_lvl=1):
         if self.__initialized:
-            logging.warn(msg, exc_info=log_exc, stack_info=log_stack, stack_level=stack_lvl)
+            logging.warn(msg, exc_info=log_exc, stack_info=log_stack, stacklevel=stack_lvl)
         else:
             pass
             # TODO: raise exception if logging subsystem is not initialized
 
     def log_error(self, msg, log_exc=False, log_stack=False, stack_lvl=1):
         if self.__initialized:
-            logging.error(msg, exc_info=log_exc, stack_info=log_stack, stack_level=stack_lvl)
+            logging.error(msg, exc_info=log_exc, stack_info=log_stack, stacklevel=stack_lvl)
         else:
             pass
             # TODO: raise exception if logging subsystem is not initialized

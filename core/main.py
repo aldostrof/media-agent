@@ -16,6 +16,7 @@ Main Entry point of the application.
 
 from core.log.log_handling import LogManager
 from core.bot.bot import BotManager
+from core.ssh.ssh import SSHManager
 
 ################################## Code ########################################
 
@@ -41,8 +42,21 @@ def main():
     # TODO: handle thrown exceptions
     app_setup()
     print("I am online!")
-    botman = BotManager()
-    botman.botmanager_run_bot()    
+    #botman = BotManager()
+    #botman.botmanager_run_bot()
+
+    sshman = SSHManager.getInstance()
+    sshman.setupSSHConnection()
+    movies  = sshman.getFolderContents(sshman.getMoviesFolder())
+    photos  = sshman.getFolderContents(sshman.getPhotosFolder())
+    tvshows = sshman.getFolderContents(sshman.getTVShowsFolder())
+    music   = sshman.getFolderContents(sshman.getMusicFolder())
+    print(movies)
+    print(photos)
+    print(tvshows)
+    print(music)
+    sshman.closeSSHConnection()
+
 
 
 if __name__ == "__main__":
